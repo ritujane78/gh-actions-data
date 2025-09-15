@@ -12,10 +12,10 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
-          path: node_modules
+          path: ~/.npm
           key: deps-node-modules-${{hashFiles('**/package-lock.json')}} 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Lint code
         run: npm run lint
       - name: Test code
@@ -31,10 +31,10 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
-          path: node_modules
+          path: ~/.npm
           key: deps-node-modules-${{hashFiles('**/package-lock.json')}} 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Build website
         run: npm run build
       - name: Get JS filename
