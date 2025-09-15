@@ -41,11 +41,12 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying..."
-      - name: Output contents
-        run: ls
       - name: Output filename
         run: echo "${{needs.build.outputs.script-file}}"
       - name: Get build artifacts
         uses: actions/download-artifact@v4
         with:
           name: dist-files
+      - name: Output contents
+        run: ls
+          
